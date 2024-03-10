@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./constants.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attrachallenge</title>
+  </head>
+  <body>
+    <main>
+      <div class="filters">
+        <img id="headerImage" src="images/filtersHeader.png" />
+
+        <div class="column">
+          <label for="searchByName">Search For Specific Attraction Name:</label>
+          <div>
+            <input id="searchByName" />
+            <ul id="suggestions"></ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <label>Rating</label>
+
+          <div id="starRarting">
+            <div class="fa fa-star fa-lg"></div>
+            <div class="fa fa-star fa-lg"></div>
+            <div class="fa fa-star fa-lg"></div>
+            <div class="fa fa-star fa-lg"></div>
+            <div class="fa fa-star fa-lg"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="isOpenInWeekends">Open On Weekends</label>
+          <input type="checkbox" id="isOpenInWeekends" name="isOpenInWeekends" />
+        </div>
+
+        <div class="column">
+          <output id="priceOutput" for="priceSlider">Max Price</output>
+          <input
+            min="0"
+            max="200"
+            type="range"
+            value="0"
+            class="slider"
+            id="priceSlider"
+            oninput="this.previousElementSibling.value = 'Max Price: ' + this.value + '₪'"
+          />
+        </div>
+
+        <div class="column">
+          <output id="radiusOutput" for="radiusSlider">Max Radius From Your Home</output>
+          <input
+            min="0"
+            max="500"
+            type="range"
+            value="0"
+            class="slider"
+            id="radiusSlider"
+            oninput="this.previousElementSibling.value = 'Max Radius From Your Home: ' + this.value + 'KM'"
+          />
+        </div>
+        <div class="selectContainer">
+          <select id="areaSelector">
+            <option value="" disabled selected>Select Area</option>
+          </select>
+
+          <select id="citySelector">
+            <option value="" disabled selected>Select City</option>
+          </select>
+
+          <select id="categorySelector">
+            <option value="" disabled selected>Select Category</option>
+          </select>
+        </div>
+        <button id="searchButton">Search</button>
+        <button id="clearButton">Clear Filters</button>
+      </div>
+      <div id="map"></div>
+    </main>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9mEiNAzRkA18iAvO2ndkz7pVWBQbV66E&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Gill Sans MT";
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  transform: translateZ(0);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/backgroundHomePage.webp") no-repeat;
+  background-size: 100%;
+}
+
+.markerImage {
+  width: 30px;
+}
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info {
+  width: 100%;
+  margin-top: 10%;
+  align-self: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+}
+
+.info > h1 {
+  margin: 1px;
+  font-size: 4rem;
+}
+
+.info > h4 {
+  margin: 7px;
+  font-size: 2rem;
+}
+
+.content {
+  padding: 1% 10%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.content_para {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.startButton > a {
+  border-radius: 5px;
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  margin-top: 10px;
+
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+.startButton span {
+  position: relative;
+  z-index: 2;
+}
+
+.startButton > a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #2b546f;
+  transition: all 0.35s;
+}
+
+.startButton > a:hover {
+  color: #fff;
+}
+
+.startButton > a:hover:after {
+  width: 100%;
+}
+
+/* Search On Map styles  */
+
+main {
+  display: flex;
+}
+
+#map {
+  height: 100vh;
+  width: 80vw;
+}
+
+.filters {
+  width: 20vw;
+  display: flex;
+  padding: 0 20px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.fa-star {
+  cursor: pointer;
+}
+
+.checkedStar {
+  transition: 0.3s;
+  color: orange;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row > label,
+.column > output,
+.column > label {
+  font-size: 20px;
+}
+
+#filter > h2,
+select,
+input,
+label,
+output,
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border-color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+ul {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  list-style-type: none;
+  padding: 0;
+}
+#searchByName {
+  width: 100%;
+  border: 1px solid #00226b;
+}
+
+#searchButton {
+  /* margin-top: 30px; */
+  background-color: #00226b;
+  color: white;
+  transition: 0.5s;
+}
+
+#searchButton:hover {
+  background-color: #1b58db;
+}
+
+#clearButton {
+  transition: 0.5s;
+}
+
+#clearButton:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+ul > li {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+ul > li:hover {
+  background-color: #00226b;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background-color: #00226b;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+/* input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+} */
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #00236b;
+}
